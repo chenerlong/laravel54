@@ -17,6 +17,8 @@
 
 //Rout::get('/', '[控制器]@[行为]');
 
+Route::get('/', '\App\Http\Controllers\LoginController@index');
+
 //用户模块
 //注册页面
 Route::get('/register', '\App\Http\Controllers\RegisterController@index');
@@ -37,7 +39,7 @@ Route::post('/user/me/setting', '\App\Http\Controllers\UserController@settingSto
 //文章搜索
 Route::get('/posts/search', '\App\Http\Controllers\PostController@search');
 //文章列表页
-Route::get('/', '\App\Http\Controllers\PostController@index');
+
 Route::get('/posts', '\App\Http\Controllers\PostController@index');
 //创建文章
 Route::get('/posts/create', '\App\Http\Controllers\PostController@create');
@@ -68,6 +70,10 @@ Route::post('/user/{user}/unfan', '\App\Http\Controllers\UserController@unfan');
 Route::get('/topic/{topic}', '\App\Http\Controllers\TopicController@show');
 //投稿
 Route::post('/topic/{topic}/submit', '\App\Http\Controllers\TopicController@submit');
+
+//通知
+Route::get('/notices', '\App\Http\Controllers\NoticeController@index');
+
 
 //
 include_once('admin.php');

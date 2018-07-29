@@ -13,7 +13,9 @@ class AlterPostsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('posts', function (Blueprint $table) {
+            $table->tinyInteger('status')->default(0); // 文章状态：0未知，1通过，-1删除
+        });
     }
 
     /**
@@ -23,6 +25,8 @@ class AlterPostsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
     }
 }
