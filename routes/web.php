@@ -34,6 +34,8 @@ Route::get('/user/me/setting', '\App\Http\Controllers\UserController@setting');
 Route::post('/user/me/setting', '\App\Http\Controllers\UserController@settingStore');
 
 
+//文章搜索
+Route::get('/posts/search', '\App\Http\Controllers\PostController@search');
 //文章列表页
 Route::get('/', '\App\Http\Controllers\PostController@index');
 Route::get('/posts', '\App\Http\Controllers\PostController@index');
@@ -62,3 +64,7 @@ Route::get('/user/{user}', '\App\Http\Controllers\UserController@show');
 Route::post('/user/{user}/fan', '\App\Http\Controllers\UserController@fan');
 Route::post('/user/{user}/unfan', '\App\Http\Controllers\UserController@unfan');
 
+//专题详情页
+Route::get('/topic/{topic}', '\App\Http\Controllers\TopicController@show');
+//投稿
+Route::post('/topic/{topic}/submit', '\App\Http\Controllers\TopicController@submit');
