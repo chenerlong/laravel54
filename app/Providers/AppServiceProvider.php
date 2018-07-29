@@ -22,6 +22,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('topics', $topics);
         });
 
+        \View::composer('layout.nav', function($view){
+            $user = \Auth::user();
+            $view->with('user', $user);
+        });
+
     }
 
     /**

@@ -35,7 +35,7 @@
         <p class="login-box-msg">登陆</p>
 
         <form action="/admin/login" method="post">
-            <input type="hidden" name="_token" value="RPPMc0lhvtynKELDZljXlz9UZI9uNc55ip1P8GCM">
+            {{csrf_field()}}
             <div class="form-group has-feedback">
                 <input name="name" type="text" class="form-control" placeholder="名字">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -45,6 +45,9 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
+
+                @include('admin.layout.error')
+
                 <!-- /.col -->
                 <div class="col-xs-4">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">登陆</button>

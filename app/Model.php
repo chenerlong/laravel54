@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model as BaseModel;
 //默认 posts 表
 class Model extends BaseModel
 {
-    //不可注入
+    //不可注入字段
     protected $guarded = [];
 
     //可注入
